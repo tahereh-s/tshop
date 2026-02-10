@@ -1,11 +1,11 @@
-// drizzle.config.ts
-import type { Config } from 'drizzle-kit';
+// drizzle.config.ts - SQLITE VERSION
+import { defineConfig } from 'drizzle-kit';
 
-export default {
+export default defineConfig({
   schema: './lib/db/schema.ts',
   out: './drizzle',
-  dialect: 'postgresql',
+  dialect: 'sqlite',
   dbCredentials: {
-    url: process.env.DATABASE_URL!,
+    url: 'sqlite.db',  // Local SQLite file
   },
-} satisfies Config;
+});
